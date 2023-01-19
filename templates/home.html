@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container" >
+    <div class="jumbotron"><BR></BR>
+       
+        <h1 align="center">Here there you go , YOUR POSTS....!</h1><br><hr>
+        
+        <div>   
+            <ol> 
+                <b><h4 style="color:coral;"> <li>  {% for myimg in images %}<U>  {{myimg}}</U> </li></h4></b><BR></BR>
+                    <ol>
+                        <li><b><U> Title      </U> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b> &nbsp;  {{ myimg.Title }} </li><BR></BR>
+                        <li><b><u> Subtitle   </u> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b> &nbsp; {{ myimg.Subtitle }} <BR></BR></li>
+                        <li><b><u> Subject    </u> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b> &nbsp; {{ myimg.Subj }} <BR></BR></li>
+                        <li><b><u> Image      </u> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>&nbsp;&nbsp; <img src="{{ myimg.img.url }}" height="200px" width="300px"> <BR></BR></li>
+                            
+                        <li><b><u> Created By </u> &nbsp;&nbsp; :</b> &nbsp; {{ myimg.Created_By }} <BR></BR></li>      
+                    </ol>  <hr>
+                <b ><h4 style="color:darkorchid;"><li>{% endfor %}</li></h4></b>
+            </ol>
+        </div>  
+              
+    </div>
+</div>
+
+{% endblock %}

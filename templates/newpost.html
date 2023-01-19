@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<B> <marquee behavior="scroll" direction="left" style="background-color: aqua;">POST YOUR NEW PROJECTS HERE...!</marquee></B>
+
+<form action="{% url 'loginformapp:newpost' %}" method="POST" align="left" style="padding-top:50px;padding-left: 30%;" enctype="multipart/form-data"><BR></BR>
+    <h1>POST HERE...!</h1><BR></BR>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-success" value="POST">
+</form>
+
+
+
+
+{% endblock %}
